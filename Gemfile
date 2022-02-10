@@ -6,6 +6,7 @@ gem 'puma'
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'webrick'
+gem "haml"
 
 # For plain Ruby scripts
 group :development do
