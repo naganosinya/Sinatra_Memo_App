@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01b92f2f-b956-4c18-9455-fda4b0fc9051" name="変更" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Sinatra_memos_app.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/memos.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/edit.haml" beforeDir="false" afterPath="$PROJECT_DIR$/views/edit.haml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.haml" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.haml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/layout.haml" beforeDir="false" afterPath="$PROJECT_DIR$/views/layout.haml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/new.haml" beforeDir="false" afterPath="$PROJECT_DIR$/views/new.haml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/show.haml" beforeDir="false" afterPath="$PROJECT_DIR$/views/show.haml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +84,7 @@
       <workItem from="1644493521903" duration="6899000" />
       <workItem from="1644889002881" duration="12395000" />
       <workItem from="1644901987371" duration="14969000" />
-      <workItem from="1645061285798" duration="3250000" />
+      <workItem from="1645061285798" duration="3692000" />
     </task>
     <servers />
   </component>
