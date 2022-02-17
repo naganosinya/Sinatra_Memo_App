@@ -2,13 +2,10 @@
 
 source 'https://rubygems.org'
 
+gem 'haml'
+gem 'pry-byebug'
 gem 'puma'
+gem 'rubocop-fjord', require: false
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'webrick'
-gem "haml"
-
-# For plain Ruby scripts
-group :development do
-  gem 'rubocop-fjord', require: false
-end

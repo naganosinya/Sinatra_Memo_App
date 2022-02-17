@@ -5,11 +5,12 @@
     %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     %title Hello World
-    %link{:href => "./style.css", :rel => "stylesheet"}/
+    %link{:href => "./css/style.css", :rel => "stylesheet"}/
   %body
     %nav.bg-gray-800
       .max-w-7xl.mx-auto.px-2.sm:px-6.lg:px-8
         .relative.flex.items-center.justify-between.h-16
-          %h1.text-white メモアプリ
-    = yield
+          %a.text-white{ :href => '/' } メモアプリ
+    .container
+      = yield
     %script{:src => "https://cdn.tailwindcss.com"}
