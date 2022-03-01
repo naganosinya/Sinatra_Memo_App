@@ -1,0 +1,19 @@
+.flex.flex-col.container
+  .-my-2.overflow-x-auto.sm:-mx-6.lg:-mx-8.pl-20.pr-20.mt-10
+    .py-2.align-middle.inline-block.min-w-full.sm:px-6.lg:px-8
+      .shadow.overflow-hidden.border-b.border-gray-200.sm:rounded-lg
+        .min-w-full.divide-y.divide-gray-200
+          .bg-gray-50
+            .flex
+              .px-4.py-3.text-left.text-xs.font-medium.text-gray-500.uppercase.tracking-wider.whitespace-nowrap.text-xl.w-300 タイトル
+              .px-4.py-3.text-left.text-xs.font-medium.text-gray-500.uppercase.tracking-wider.whitespace-nowrap.text-xl 内容
+            - @memos.each do | memo |
+              .bg-white.divide-y.divide-gray-200
+                %a{ :href => "memos/#{memo['id']}", :class => 'flex' }
+                  .px-4.py-4.w-300
+                    .flex.items-center
+                      .text-sm.font-medium.text-gray-900.text-xl&= memo['title']
+                  .px-4.py-4.flex-auto
+                    .text-sm.text-gray-900.text-xl&= memo['content']
+
+      %a.mt-4.py-4.px-6.bg-gray-800.inline-block.text-white.rounded-lg{:href => "/memos/new"} 新しいメモを作成する
