@@ -32,7 +32,7 @@ post '/memos' do
 end
 
 patch '/memos/:id' do
-  memos.update(params[:id], params[:title], params[:content])
+  memos.update(params[:title], params[:content], params[:id])
   redirect to "/memos/#{params[:id]}"
 end
 
