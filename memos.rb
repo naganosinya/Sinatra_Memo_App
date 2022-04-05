@@ -1,60 +1,38 @@
 # frozen_string_literal: true
 
-require 'json'
+require 'pg'
 
 class Memos
-  MEMOS_PATH = 'db/memos.json'
+  DB_NAME = 'sinatra_memos_db'
 
   def all
-    hash = set_memos
-    hash['memos']
+    connection = set_connection
+    connection.exec("SELECT * FROM Memos")
   end
 
   def find(id)
-    hash = set_memos
-    hash['memos'].find { |i| i['id'] == id }
+    connection = set_connection
+    connection.exec('SELECT * FROM Memos WHERE id = $1', [id])
   end
 
   def create(title, content)
-    hash = set_memos
-
-    next_id = hash['memos'].map { |memo| memo['id'] }.max.to_i + 1
-    hash['memos'].append({ 'id': next_id.to_s, 'title': title, 'content': content })
-
-    File.open(MEMOS_PATH, 'w') do |file|
-      JSON.dump(hash, file)
-    end
+    connection = set_connection
+    connection.exec('INSERT INTO Memos (title, content) VALUES ($1, $2)', [title, content])
   end
 
-  def update(id, title, content)
-    hash = set_memos
-
-    memo = hash['memos'].find { |i| i['id'] == id }
-    if memo
-      memo['title'] = title
-      memo['content'] = content
-    end
-
-    File.open(MEMOS_PATH, 'w') do |file|
-      JSON.dump(hash, file)
-    end
+  def update(title, content, id)
+    connection = set_connection
+    connection.exec('UPDATE Memos SET title = $1, content = $2 WHERE id = $3', [title, content, id])
   end
 
   def destroy(id)
-    hash = set_memos
-    memo = hash['memos'].find { |i| i['id'] == id }
-    hash['memos'].delete(memo) if memo['id'] == id
-
-    File.open(MEMOS_PATH, 'w') do |file|
-      JSON.dump(hash, file)
-    end
+    connection = set_connection
+    connection.exec('DELETE FROM Memos WHERE id = $1', [id])
   end
 
   private
 
-  def set_memos
-    File.open(MEMOS_PATH) do |f|
-      JSON.parse(f.read)
-    end
+  def set_connection
+    PG::connect(dbname: "#{DB_NAME}")
   end
 end
