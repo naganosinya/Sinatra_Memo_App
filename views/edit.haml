@@ -1,5 +1,5 @@
 %div
-  %form{:action => "/memos/#{@memo[0]['id']}", :method => "POST"}
+  %form{:action => "/memos/#{@memo['id']}", :method => "POST"}
     %input{:name => "_method", :type => "hidden", :value => "PATCH"}/
     .shadow.sm:rounded-md.sm:overflow-hidden
       .px-4.py-5.bg-white.space-y-6.sm:p-6
@@ -7,11 +7,11 @@
           .col-span-3.sm:col-span-2
             %label.block.text-sm.font-medium.text-gray-700{:for => "company-website"} タイトル
             .mt-1.flex.rounded-md.shadow-sm
-              %input#company-website.focus:ring-indigo-500.focus:border-indigo-500.flex-1.block.w-full.rounded-none.rounded-r-md.sm:text-sm.border.border-gray-300.p-2{:name => "title", :type => "text", :value => "#{@memo[0]['title']}"}/
+              %input#company-website.focus:ring-indigo-500.focus:border-indigo-500.flex-1.block.w-full.rounded-none.rounded-r-md.sm:text-sm.border.border-gray-300.p-2{:name => "title", :type => "text", :value => "#{@memo['title']}"}/
         %div
           %label.block.text-sm.font-medium.text-gray-700{:for => "about"} 内容
           .mt-1
             %textarea#about.shadow-sm.focus:ring-indigo-500.focus:border-indigo-500.mt-1.block.w-full.sm:text-sm.border.border-gray-300.rounded-md.p-2{:name => "content", :rows => "10"}
-              = @memo[0]['content']
+              = @memo['content']
           %div
             %button.mt-4.py-4.px-6.bg-gray-800.inline-block.text-white.rounded-lg{ :type => 'submit' } 保存する

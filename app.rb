@@ -17,12 +17,12 @@ get '/memos/new' do
 end
 
 get '/memos/:id' do
-  @memo = memos.find(params[:id])
+  @memo = memos.find(params[:id])[0]
   haml :show
 end
 
 get '/memos/:id/edit' do
-  @memo = memos.find(params[:id])
+  @memo = memos.find(params[:id])[0]
   haml :edit
 end
 
@@ -32,7 +32,7 @@ post '/memos' do
 end
 
 patch '/memos/:id' do
-  memos.update(params[:title], params[:content], params[:id])
+  memos.update(params[:id], params[:title], params[:content])
   redirect to "/memos/#{params[:id]}"
 end
 
